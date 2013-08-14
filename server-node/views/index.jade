@@ -1,0 +1,59 @@
+extends layout
+
+block content
+  div.navbar
+    div.navbar-inner
+      div.container
+        a.brand(href="/") User Demo
+        a.pull-right(ng-click="showLogin()", style="margin-top: 10px", ng-show="!User.isLoggedIn") Login
+        a.pull-right(ng-click="logout()", style="margin-top: 10px", ng-show="User.isLoggedIn") Logout
+  div.container
+    div.row
+      div.span12
+        div(ng-view)
+      //- div.span12(ng-controller="LoginCtrl")
+      //-   div(ng-show="!User.isLoggedIn")
+      //-     form.form-horizontal(ng-submit="handleLogin()")
+      //-       legend Login
+      //-       div.control-group
+      //-         label.control-label(for="username") Username 
+      //-         div.controls
+      //-           input(type="text", id="username", name="username", ng-model="LoginModel.username", required)
+      //-       div.control-group
+      //-         label.control-label(for="password") Password 
+      //-         div.controls
+      //-           input(type="password", id="password", name="password", ng-model="LoginModel.password", required)
+      //-       div.form-actions
+      //-         button.btn.btn-primary(type="submit", ng-click="") Login
+
+      //-   div(ng-controller="UserCtrl")
+      //-     form.form-horizontal(ng-submit="handleSaveUser()", ng-show="User.isLoggedIn")
+      //-       legend Welcome, {{User.firstName}}!
+
+      //-       div.control-group
+      //-         label.control-label(for="username") User Name 
+      //-         div.controls
+      //-           input(type="text", id="username", name="username", value="{{User.username}}", disabled)
+
+      //-       div.control-group
+      //-         label.control-label(for="firstName") First Name 
+      //-         div.controls
+      //-           input(type="text", id="firstName", name="firstName", ng-model="User.firstName", required)
+
+      //-       div.control-group
+      //-         label.control-label(for="lastName") Last Name 
+      //-         div.controls
+      //-           input(type="text", id="lastName", name="lastName", ng-model="User.lastName", required)
+
+      //-       div.control-group
+      //-         label.control-label(for="email") Email 
+      //-         div.controls
+      //-           input(type="text", id="email", name="email", ng-model="User.email", required)
+
+      //-       div.control-group
+      //-         label.control-label(for="phone") Phone Number 
+      //-         div.controls
+      //-           input(type="text", id="phone", name="phone", ng-model="User.phone", required)
+
+      //-       div.form-actions
+      //-         button.btn.btn-primary(type="submit") Save
