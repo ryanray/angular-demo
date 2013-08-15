@@ -1,4 +1,4 @@
-  <div ng-show="!User.isLoggedIn">
+  <div ng-hide="AuthorizedUser.isLoggedIn">
     <form ng-submit="handleLogin()" class="form-horizontal">
       <legend>Login</legend>
       <div class="alert alert-error" ng-show="errorMessage.length">
@@ -6,12 +6,12 @@
       </div>
       <div class="control-group">
         <label for="username" class="control-label">Username </label>
-        <div class="controls"><input type="text" id="username" name="username" ng-model="LoginModel.username" required></div>
+        <div class="controls"><input type="text" id="username" name="username" ng-model="LoginModel.username" maxlength="20" required></div>
       </div>
       <div class="control-group">
         <label for="password" class="control-label">Password </label>
-        <div class="controls"><input type="password" id="password" name="password" ng-model="LoginModel.password" required></div>
+        <div class="controls"><input type="password" id="password" name="password" ng-model="LoginModel.password" maxlength="20" required></div>
       </div>
-      <div class="form-actions"><button type="submit" ng-click="" class="btn btn-primary">Login</button></div>
+      <div class="form-actions"><button type="submit" class="btn btn-primary">Login</button></div>
     </form>
   </div>
